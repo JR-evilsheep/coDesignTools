@@ -1,0 +1,106 @@
+<! DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org TR/html4/strict.dtd" >
+<html lang="en">
+	<head>
+	<link rel="stylesheet" type="text/css" href="styles/Main.css">
+	<link rel="stylesheet" type="text/css" href="styles/jquery-ui.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script src="js/coDesignF.js"></script>
+	<script src="js/Three-49dev.js"></script>
+	<script src="js/Detector.js"></script>
+	<script src="js/Main.js"></script>
+	<script src="js/Geom.js"></script>
+	<script src="js/InOut.js"></script>
+	<script src="js/js.js"></script>
+	<script type="text/javascript" src="jquery.ui-1.6rc2/jquery-1.2.6.js"></script>
+
+	<script type="text/javascript" src="jquery.ui-1.6rc2/ui/ui.core.js"></script>
+	<script type="text/javascript" src="jquery.ui-1.6rc2/ui/ui.slider.js"></script>
+	
+
+	<script type="text/javascript">
+	//define function to be executed on document ready
+	$(function(){
+		if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+		//run setup functions
+		init();//this is in Main.js
+		inputs();//this is in InOut.js
+		outputs();//this is in InOut.js
+		animate();//this is in Main.js	
+		initBrowserWarning();
+		initDnD();	
+	});//end ducument ready
+	</script>
+	
+	</head>
+	
+	<title> CoDesign Tools UI example</title>
+
+	<body id="body">
+		
+	<div id="Header"> </div>
+	<form id="ss-form"> 
+		<input type="hidden" name="entry.0.single" class="ss-q-short" id="entry_0">
+	</form>
+	<!-->////////////////////////input variables////////////////////////////<-->
+	<div id="leftSidebar" >
+		<div id="inputs">
+			<h1>Controls</h1>
+			<br>
+			<label for="slider1">Height: </label>
+			<input type="text" id="sliderval1" value= "50 ft." style="border:0;">
+			<div id="mySlider"></div>
+			<br>
+			<label for="slider2">Width: </label>
+			<input type="text" id="sliderval2" value= "50 ft." style="border:0;">
+			<div id="mySlider2"></div>
+		</div>
+		<br>
+		<div id="outputs">
+			<h1>Outputs</h1>
+			<br>
+			<label for="box-volume">Box Volume: </label>
+			<input type="text" id="box-volume" value="" style="border:0;">
+		</div>
+		<br>
+		<div id="upload-box">
+			<div>
+				<span id="upload-status-text">
+					<h2> Drag and Drop .ghx file </br> here to translate</h2>
+				</span>
+				<span id="upload-details">
+					inputs, outputs and geometry are loaded for you automatically :)
+				<br> <a href="codesigntools.com/guidelines" target="new">file prep guidelines</a>
+				<span>
+				</br>
+				<span>
+				refresh browser to clear file and go back to default view
+				</span>
+			</div>
+
+			<div id="upload-header">
+				<span id="upload-title">Filename:</span>
+				<span id="upload-name"></span>
+			</div>
+		</div>
+		<br>
+		<div> View instructions: press and drag left mouse button to rotate <br>
+		right button to pan, center button to zoom</div>
+	</div>
+
+	<!-->////////////////////////3D model viewport////////////////////////////<-->
+	<div id="Content">
+	<div id="container" style= ""></div>
+		<script>
+
+		</script>
+	</div>
+	<!-->////////////////////////end 3D model viewport////////////////////////////<-->
+	
+	
+	<div id="drop-box-overlay">
+		<h1>Drop files anywhere to upload...</h1>
+	</div>
+	
+
+	</body>
+</html>

@@ -1,0 +1,186 @@
+/*text*/
+body{ font: 62.5% Helvetica, Arial, sans-serif; margin: 0px;}
+#sliderLabel {font: Helvetica, Arial, sans-serif;}
+
+/*divs*/
+#header{
+	position : absolute;
+	left : 0;
+	top: 0;
+	width: 100%;
+	height:100px;
+	background: #ffffff;
+	background-image: url('../images/colorlogo-W100.jpg');
+	background-repeat:no-repeat;
+	padding : 3px;
+}
+
+#leftSidebar{
+  position : absolute;
+  left : 0;
+  top: 110px;
+  width : 335px;
+  margin-left : 10px;
+  color : #000000;
+  padding : 3px;
+}
+
+#Content {
+  position : absolute;
+  left : 335px;
+  top: 110px;
+  padding : 3px;
+  color : #000000;
+}
+
+#content h1, #content h2 {
+  color : #000fff;
+}
+
+
+/*slider*/
+.ui-slider {
+	/*resets*/margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none;
+	width:90%;
+	font-family: Verdana, Arial, sans-serif;
+	background-color: #f0f0f0;
+	border: 1px solid #d3d3d3;
+	height: .8em;
+	position: relative;
+	startValue: 50;
+	max: 100;
+	min:0;
+	animate: true;
+}
+.ui-slider-handle {
+	/*resets*/margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none;
+	position: absolute;
+	z-index: 2;
+	top: -3px;
+	width: 1.2em;
+	height: 1.2em;
+	background: #ffffff url(images/ffffff_40x100_textures_02_glass_65.png) 0 50% repeat-x;
+	border: 1px solid #dddddd;
+}
+.ui-slider-handle:hover {
+	background: #dadada url(images/dadada_40x100_textures_02_glass_75.png) 0 50% repeat-x;
+	border: 1px solid #999999;
+}
+.ui-slider-handle-active, .ui-slider-handle-active:hover {
+	background: #dadada url(images/dadada_40x100_textures_02_glass_75.png) 0 50% repeat-x;
+	border: 1px solid #dddddd;
+}
+
+/*DnD classes*/
+#upload-thumbnail-list {
+	display: none;
+	padding-top: 2em;
+}
+
+#upload-box {
+	width: 90%;
+	height: 150px;
+	margin: 1px;
+	border: 1px dashed #d3d3d3;
+	background-color: #f0f0f0;
+	text-align: center;
+	-moz-border-radius: 4px 4px;
+	-webkit-border-radius: 4px 4px;
+	border-bottom-left-radius: 4px 4px;
+	border-bottom-right-radius: 4px 4px;
+	border-top-left-radius: 4px 4px;
+	border-top-right-radius: 4px 4px;
+}
+
+#drag-trigger {
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+}
+
+#root-container {
+	width: 480px;
+	margin: 0 auto;
+	padding-top: 1em;
+	position: relative;
+	overflow: hidden;
+}
+
+#upload-status-progressbar {
+	height: 16px;
+	margin: 1em 1em;
+
+	/* workaround a jquery ui bug in how the progress bar displays empty */
+	padding: 0 1px;
+	display: none;
+}
+#drop-box-overlay {
+	margin: 1px;
+	padding: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	position: fixed;
+	background-color: #222222;
+	display: none;
+	
+	z-index: 50;
+	opacity: 0.9;
+}
+
+#drop-box-overlay h1 {
+	padding: 2em;
+	top: 38%;
+	left: 35%;
+	position: absolute;
+	
+	background-color: #f0f0f0;
+	border: 1px solid #d3d3d3;
+	-moz-border-radius: 4px 4px;
+	-webkit-border-radius: 4px 4px;
+	border-bottom-left-radius: 4px 4px;
+	border-bottom-right-radius: 4px 4px;
+	border-top-left-radius: 4px 4px;
+	border-top-right-radius: 4px 4px;
+	
+	color: #222222;
+	font-size: 150%;
+	text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+/*progress bar classes*/
+#upload-box {
+	list-style: none;
+	margin-bottom: 3em;
+}
+
+#upload-box .progress-bar-container {
+	width: 90%;
+	height: 10px;
+	border: 1px solid #555;
+	margin-bottom: 20px;
+}
+
+#upload-box .progress-bar-container.uploaded {
+	height: auto;
+	border: none;
+}
+
+#upload-box .progress-bar {
+	width: 0;
+	height: 10px;
+	font-weight: bold;
+	background: #6787e3;
+}
+
+#upload-box .progress-bar-container.uploaded .progress-bar{
+	display: inline-block;
+	width: auto;
+	color: #6db508;
+	background: transparent;
+}
